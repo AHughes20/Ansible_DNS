@@ -1,0 +1,20 @@
+$TTL 86400
+$ORIGIN lab.prod.
+@       IN  SOA ns1.lab.prod. admin.lab.prod. (
+            2025122101 ; serial
+            3600       ; refresh
+            1800       ; retry
+            604800     ; expire
+            86400 )    ; minimum
+; Name servers
+
+@        IN  NS  ns1.lab.prod.
+
+; Hosts
+
+ns1     IN  A   10.10.0.15
+r1      IN  A   10.10.0.1
+rhel8   IN  A   10.10.0.50
+sw1     IN  A   10.10.10.51
+pc1     IN  A   10.10.10.52
+old_dns IN  A   10.10.10.100

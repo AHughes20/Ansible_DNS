@@ -1,0 +1,36 @@
+---
+- name: Updating the system
+  hosts: rhel_hosts
+  become: yes
+  tasks:
+    - name: Update all packages
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        
+    - name: installing bind
+      ansible.builtin.dnf:
+        name: 
+          - bind
+          - bind-utils
+        state: latest
+
+    - name: Adding files and directories
+      ansible.builtin.copy:
+        src:  db.lab.prod
+        dest: /var/named/
+        owner: root
+        group: named
+
+    - name: Adding More
+      ansible.builtin.copy:
+        src: named.conf
+        dest: /etc/
+        owner: root
+        group: named
+
+    - name: please work
+      ansible.builtin.systemd_service:
+        name: named
+        enabled: true
+        state: started
