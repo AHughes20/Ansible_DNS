@@ -17,4 +17,4 @@ r1      IN  A   10.10.0.1
 rhel8   IN  A   10.10.0.50
 sw1     IN  A   10.10.10.51
 pc1     IN  A   10.10.10.52
-old_dns IN  A   10.10.10.100
+olddns IN  A   10.10.10.100
